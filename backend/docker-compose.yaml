@@ -1,0 +1,58 @@
+version: '3.8'
+services:
+    cdn:
+      container_name: cdn-kulinarium
+      build:
+        context: ./cdn
+        dockerfile: Dockerfile
+      ports:
+        - '8081:8081'
+      environment:
+        - API_PORT=8081
+        - API_IMAGE_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
+      healthcheck:
+        test: "curl -f http://cdn:8081/health"
+        interval: 2s
+        timeout: 2s
+        retries: 20
+      volumes:
+        - storage:/cdn/tmp
+    postgres:
+      image: postgres:latest
+      container_name: postgres-kulinarium
+      environment:
+        - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD=admin
+        - POSTGRES_DB=postgres
+      volumes:
+        - ./sql/base.sql:/docker-entrypoint-initdb.d/database_config.sql
+      ports:
+        - '5432:5432'
+      healthcheck:
+        test: ["CMD-SHELL", "pg_isready -U postgres"]
+        interval: 1s
+        timeout: 1s
+        retries: 10
+    kulinarium:
+      environment:
+        - CDN_IMAGE_ADRESS=http://cdn-kulinarium:8081/image
+        - CDN_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
+        - POSTGRES_HOST=jdbc:postgresql://postgres-kulinarium:5432/tukulinarium
+        - POSTGRES_USER=postgres
+        - POSTGRES_PASS=admin
+        - JWT_SECRET=somesecret
+        - JWT_EXPIRATION_MS=6000000
+        - JWT_REFRESH_TOKEN_EXPIRATION=1200000
+      container_name: kulinarium
+      build:
+        context: ./TUKulinarium
+        dockerfile: Dockerfile
+      depends_on:
+        cdn:
+          condition: service_healthy
+        postgres:
+          condition: service_healthy
+      ports:
+        - '8080:8080'
+volumes:
+  storage:

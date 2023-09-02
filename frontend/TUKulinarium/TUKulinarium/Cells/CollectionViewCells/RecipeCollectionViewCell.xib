@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dU7-kZ-Yn8" customClass="RecipeCollectionViewCell" customModule="TUKulinarium" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="233" height="232"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="tMN-LG-shd">
+                <rect key="frame" x="0.0" y="0.0" width="233" height="232"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vegetables-flying-out-pan-isolated-white-background-healthy-food-cooking-concept-158040142" translatesAutoresizingMaskIntoConstraints="NO" id="yHv-Jt-krc">
+                        <rect key="frame" x="46.5" y="16" width="140" height="140"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="140" id="5KR-Os-oVT"/>
+                            <constraint firstAttribute="width" constant="140" id="Ycs-NI-OT5"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stir fry" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="28U-RG-L1R">
+                        <rect key="frame" x="16" y="164" width="201" height="14"/>
+                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="18"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="M5w-eM-mva">
+                        <rect key="frame" x="60" y="186" width="113.5" height="30"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="oyg-jy-i2x">
+                                <rect key="frame" x="0.0" y="0.5" width="24" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="b6e-jv-wnM"/>
+                                    <constraint firstAttribute="height" constant="24" id="u2e-6C-AAU"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Te8-50-9QB">
+                                <rect key="frame" x="32" y="0.0" width="81.5" height="29"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="18"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="Fb9-v3-01z"/>
+                        </constraints>
+                    </stackView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="suit.heart" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="D8Z-t5-SWe">
+                        <rect key="frame" x="201" y="9.5" width="24" height="21.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="FER-Qw-7cY"/>
+                            <constraint firstAttribute="width" constant="24" id="KWn-ay-7bR"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="M5w-eM-mva" firstAttribute="centerX" secondItem="tMN-LG-shd" secondAttribute="centerX" id="KWg-2f-gzT"/>
+                    <constraint firstItem="28U-RG-L1R" firstAttribute="top" secondItem="yHv-Jt-krc" secondAttribute="bottom" constant="8" id="NrR-cW-JPq"/>
+                    <constraint firstItem="28U-RG-L1R" firstAttribute="leading" secondItem="tMN-LG-shd" secondAttribute="leading" constant="16" id="WYA-VS-VGZ"/>
+                    <constraint firstItem="yHv-Jt-krc" firstAttribute="centerX" secondItem="tMN-LG-shd" secondAttribute="centerX" id="XSp-dd-yV7"/>
+                    <constraint firstAttribute="bottom" secondItem="M5w-eM-mva" secondAttribute="bottom" constant="16" id="aOY-mM-cJw"/>
+                    <constraint firstAttribute="trailing" secondItem="D8Z-t5-SWe" secondAttribute="trailing" constant="8" id="c40-WK-BX7"/>
+                    <constraint firstItem="yHv-Jt-krc" firstAttribute="centerX" secondItem="tMN-LG-shd" secondAttribute="centerX" id="ipo-9a-Lew"/>
+                    <constraint firstItem="yHv-Jt-krc" firstAttribute="top" secondItem="tMN-LG-shd" secondAttribute="top" constant="16" id="kLl-JB-i6L"/>
+                    <constraint firstItem="D8Z-t5-SWe" firstAttribute="top" secondItem="tMN-LG-shd" secondAttribute="top" constant="8" id="nv0-WB-ebi"/>
+                    <constraint firstAttribute="trailing" secondItem="28U-RG-L1R" secondAttribute="trailing" constant="16" id="oDg-Bf-lHl"/>
+                    <constraint firstItem="M5w-eM-mva" firstAttribute="top" secondItem="28U-RG-L1R" secondAttribute="bottom" constant="8" id="yw3-96-bcc"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="233" height="232"/>
+            <connections>
+                <outlet property="clockImageView" destination="oyg-jy-i2x" id="tXk-kT-DnS"/>
+                <outlet property="favouriteImageView" destination="D8Z-t5-SWe" id="1ag-C5-tw3"/>
+                <outlet property="preparationTimeLabel" destination="Te8-50-9QB" id="Dax-DM-Efq"/>
+                <outlet property="recipeImageView" destination="yHv-Jt-krc" id="VWq-ss-LXC"/>
+                <outlet property="recipeNameLabel" destination="28U-RG-L1R" id="pNb-hE-Uid"/>
+            </connections>
+            <point key="canvasLocation" x="834.05797101449286" y="-133.25892857142856"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="clock" catalog="system" width="128" height="121"/>
+        <image name="suit.heart" catalog="system" width="128" height="109"/>
+        <image name="vegetables-flying-out-pan-isolated-white-background-healthy-food-cooking-concept-158040142" width="800" height="646"/>
+    </resources>
+</document>

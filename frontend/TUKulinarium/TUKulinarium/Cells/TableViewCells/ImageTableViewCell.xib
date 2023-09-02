@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ImageTableViewCell" rowHeight="233" id="mwT-30-Iov" customClass="ImageTableViewCell" customModule="TUKulinarium" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="376" height="233"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mwT-30-Iov" id="Rl6-bq-zzB">
+                <rect key="frame" x="0.0" y="0.0" width="376" height="233"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JG0-Xh-KvW">
+                        <rect key="frame" x="0.0" y="0.0" width="376" height="280"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="280" id="ck0-37-AAj"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="JG0-Xh-KvW" secondAttribute="bottom" id="KcI-ee-K7U"/>
+                    <constraint firstItem="JG0-Xh-KvW" firstAttribute="leading" secondItem="Rl6-bq-zzB" secondAttribute="leading" id="Wnx-CT-8iU"/>
+                    <constraint firstAttribute="trailing" secondItem="JG0-Xh-KvW" secondAttribute="trailing" id="sZ9-MS-o3S"/>
+                    <constraint firstItem="JG0-Xh-KvW" firstAttribute="top" secondItem="Rl6-bq-zzB" secondAttribute="top" id="zyR-T5-TrF"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="recipeImageView" destination="JG0-Xh-KvW" id="2cA-CM-5fI"/>
+            </connections>
+            <point key="canvasLocation" x="100.00000000000001" y="74.665178571428569"/>
+        </tableViewCell>
+    </objects>
+</document>

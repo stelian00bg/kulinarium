@@ -1,0 +1,964 @@
+{
+	"info": {
+		"_postman_id": "9112b6a5-5dbf-4119-96b7-73ac87d3ff5c",
+		"name": "Auth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Sign in",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"ivancho\",\r\n    \"password\" : \"audibate\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sign up",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Ivancho\",\r\n    \"username\" : \"ivanchooo\",\r\n    \"password\" : \"asdhsdhbfdshfds\",\r\n    \"email\" : \"ivankata@tukulinarium.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"refreshToken\": \"2947821d-6422-42d0-b6cc-1759fb9a212d\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/refreshtoken",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"refreshtoken"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Log out",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdXBlcnVzZXIiLCJpYXQiOjE2Mzc5NDIyNTksImV4cCI6MTYzNzk0ODI1OX0.hXUIqdecFER7R3nX2K-kXIV-dPHKT6egRst2NlYAzbEFr20e-qElvN_xbXml_hRM1p2E-88zdF2qcuh0xww00g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\" : 9\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Recipes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/test/recipes",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"test",
+						"recipes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Recipe",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJpdmFuY2hvb28iLCJpYXQiOjE2Mzk4NTA3NzcsImV4cCI6MTYzOTg1Njc3N30.LH4xJYvRQJvmqn4_2dKpxr8eeKSUZSJSocEBdJtN1aWGr8aot9LAvf_9DYmrW0dOzoKAW0hp4Nq2irkhOHYvvw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "files",
+							"type": "file",
+							"src": "/C:/Users/stoya/Desktop/images/Pancakes-recipe-1200.jpg"
+						},
+						{
+							"key": "cookingTime",
+							"value": "321",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "somerecdasdasdsads",
+							"type": "text"
+						},
+						{
+							"key": "ingredients",
+							"value": "some igredients",
+							"type": "text"
+						},
+						{
+							"key": "category",
+							"value": "basic",
+							"type": "text"
+						},
+						{
+							"key": "instructions",
+							"value": "pravi tam neshto da ima",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/recipe/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"recipe",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Recipe By Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJpdmFub3YiLCJpYXQiOjE2Mzc4Nzc0MzQsImV4cCI6MTYzNzg4MzQzNH0.7ujBk_dR0ibl5YMLY15_c7-vBVKH5oD7SnAjHmevVPLTf7rYYIDpQIoetsNEW17BWfpRM5BR1uDqj6ermmWidA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/recipe/delete/31",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"recipe",
+						"delete",
+						"31"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search recipes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/recipe/search?perPage&currentPage&name&cookingTime&username=&categoryName",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"recipe",
+						"search"
+					],
+					"query": [
+						{
+							"key": "perPage",
+							"value": null
+						},
+						{
+							"key": "currentPage",
+							"value": null
+						},
+						{
+							"key": "name",
+							"value": null
+						},
+						{
+							"key": "cookingTime",
+							"value": null
+						},
+						{
+							"key": "username",
+							"value": ""
+						},
+						{
+							"key": "categoryName",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pending Approval",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJpdmFub3YiLCJpYXQiOjE2Mzc4NzY1NjcsImV4cCI6MTYzNzg4MjU2N30.eBAxW5R4srtXS1u-qMOvGr784ZDsqGagTVSdC2BHO5Rd3lQZ-NhafJfBhjVGR9jO_kQEXoqdIyo3aFl_X9-q1w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/recipe/pending",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"recipe",
+						"pending"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Approve Recipe",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJpdmFub3YiLCJpYXQiOjE2Mzc4NzcxNDEsImV4cCI6MTYzNzg4MzE0MX0.v1kLvi8qrizq_ChH6GinjfvK4yY5SOl56wGkkaeDDYs9jrJTrayOLSJ97t6kbFfBzfucgAh-bDZ17-VaZ8yNOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/recipe/approve/31",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"recipe",
+						"approve",
+						"31"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Comment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJpdmFub3YiLCJpYXQiOjE2Mzc4ODAxMDAsImV4cCI6MTYzNzg4NjEwMH0.kyRnYL_spekLbaG5KAvXOVYqF2R3FDxNonbcNh4behhVBMR-IdO_gkek-cUMFDaUi_e0VujgxBrOKoYyvHTxaA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"recipeId\" : 32,\r\n    \"content\" : \"are begai\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/comment/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"comment",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Comment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJpdmFub3YiLCJpYXQiOjE2Mzc4ODExMTksImV4cCI6MTYzNzg4NzExOX0.ZH-5YxQtNZyRwS2t7GuN88Jz2YUs7P4z3ulxfzWLrgmzN1iB95b_xLn_K4bf0MhEWeavHC-dX-K7vTMDtGwpEA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/comment/delete/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"comment",
+						"delete",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Category By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/category/get/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"category",
+						"get",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Category",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdXBlcnVzZXIiLCJpYXQiOjE2Mzc5NDkwODIsImV4cCI6MTYzNzk1NTA4Mn0.0typiNnD8KzyfynqaiVsCPBS0GUZMatdM7zhfSAzTyMWMXT94dQZHMQXzNak1iirOP5iUvWXGQp3um5WOPXQqA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "someother1",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/D:/ChromeDownloads/260584280_1803807956470877_7324879095962053453_n.jpg",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/category/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"category",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/category/search?name=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"category",
+						"search"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Category",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJpdmFub3YiLCJpYXQiOjE2Mzc4ODI3MjUsImV4cCI6MTYzNzg4ODcyNX0.QMOedGbio0jzoscFhM3XLEWqsu4N1Rz2mKtbpo1VC7-z3gDQV1TtKqTId4t0JFh9nDPoXeWcYJDhk345cMh9Kw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/category/delete/46",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"category",
+						"delete",
+						"46"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/user/get/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"get",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Image from CDN",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/image/image.9993564052dca8c9bb432ed409f2cb96c76278c0ae1d06cb9d587ec7f5da686df3b146ba3.jpg",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"image",
+						"image.9993564052dca8c9bb432ed409f2cb96c76278c0ae1d06cb9d587ec7f5da686df3b146ba3.jpg"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Image from CDN",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/D:/ChromeDownloads/263989044_4995681783800049_3769636232474899913_n.jpg"
+						},
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8081/image/image.1043252082606d1f20477a1170f3614e586c49312b34316ff8899f88940a6f3ec5ea826abd.jpg",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"image",
+						"image.1043252082606d1f20477a1170f3614e586c49312b34316ff8899f88940a6f3ec5ea826abd.jpg"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload Image to CDN",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/D:/ChromeDownloads/bal2.2upr8.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8081/image",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"image"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Make Admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdXBlcnVzZXIiLCJpYXQiOjE2Mzk4NTA5ODUsImV4cCI6MTYzOTg1Njk4NX0.EsgGqJyc6gGPZQEb1YqG3v4pQFmj-fBz4b90tJJRY71sj1NOqNCAckUx-4VjitPSpP5BpOzHIsnORDB3QvCnlw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/user/makeAdmin?username=ivanchooo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"makeAdmin"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "ivanchooo"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Profile Picture",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJpdmFuY2hvb28iLCJpYXQiOjE2Mzk4NzAyODUsImV4cCI6MTYzOTg3NjI4NX0.CSude0BHWeCDW6hAAm-C0heqqKj-Exd6MNJh2V44KvqQNEo61DalpRHOPOd0354-PU6MHf7VdD2lmekkGbNXCw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "picture",
+							"type": "file",
+							"src": "/C:/Users/stoya/Desktop/images/Pancakes-recipe-1200.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/user/updateProfilePicture",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"updateProfilePicture"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/user/search?username=ivan&name&email",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"search"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "ivan"
+						},
+						{
+							"key": "name",
+							"value": null
+						},
+						{
+							"key": "email",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User Name",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJpdmFuY2hvb28iLCJpYXQiOjE2Mzk4NzA3ODYsImV4cCI6MTYzOTg3Njc4Nn0.fFTap9pCM6LFJjgLcX56kFEk2WneUkVrmwqvsd6kN5KKkLOMy5HTDiIyxqrpmhiWN4Ot0gHGDrPZZvZNgan7RA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/user/updateName?newName=stoicho",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"updateName"
+					],
+					"query": [
+						{
+							"key": "newName",
+							"value": "stoicho"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User Username",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJpdmFuY2hvIiwiaWF0IjoxNjM5ODcxMTA3LCJleHAiOjE2Mzk4NzcxMDd9.HPOPRIQ1__2404h8eIksRVQvvWg5U31w9kgBbrmMHde74XL5IWhxtQuR92In9y6GNc90_j1yXqC3cuy6i7jEOA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/user/updateUsername?newUsername=ivancho",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"updateUsername"
+					],
+					"query": [
+						{
+							"key": "newUsername",
+							"value": "ivancho"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User Email",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJpdmFuY2hvIiwiaWF0IjoxNjM5ODcxODEzLCJleHAiOjE2Mzk4Nzc4MTN9.Z0ndyBSyI3rkuZDvJJIklz16Pv1UTrRCrckSa5aXE9rmwlZRdC3L4WSrijojRPDrMCXFXGsoWCVRKl5ONTWWHg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"ivankata1@tukulinarium.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/user/updateEmail",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"updateEmail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User Password",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJpdmFuY2hvIiwiaWF0IjoxNjM5ODc0MTExLCJleHAiOjE2Mzk4ODAxMTF9.iF1qMxZNm-icGRyu-RH0SqHrhBNJ70waL5YJYnDHE7NC263U9KOjejArKXy5wbWCCKOncdsNz9VC5K65GPvQfQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"currentPassword\" : \"adubate\",\r\n    \"newPassword\": \"audibate123\",\r\n    \"confirmNewPassword\": \"audibate123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/user/updatePassword",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"updatePassword"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

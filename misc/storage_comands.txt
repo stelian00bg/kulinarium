@@ -1,0 +1,8 @@
+https://hub.docker.com/p/loomchild/volume-backup
+
+docker run -v [volume-name]:/volume -v [output-dir]:/backup --rm loomchild/volume-backup backup [archive-name]
+docker run -v backend_storage:/volume --rm --log-driver none loomchild/volume-backup backup - > storage.tar.bz2
+
+
+cat [archive-name] | docker run -i -v [volume-name]:/volume --rm loomchild/volume-backup restore -
+cat storage.tar.bz2 | docker run -i -v backend_storage:/volume --rm loomchild/volume-backup restore -f -
